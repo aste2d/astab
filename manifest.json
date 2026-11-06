@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "astab",
+  "version": "2.1.2",
+  "description": "A clean new tab with organized tabs, bookmark folders, todos, daily wallpapers, and a compact Pomodoro timer.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "search",
+    "bookmarks",
+    "favicon",
+    "alarms"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "astab",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "short_name": "astab",
+  "minimum_chrome_version": "134",
+  "author": "aste2d",
+  "homepage_url": "https://github.com/aste2d/astab",
+  "options_page": "about.html"
+}

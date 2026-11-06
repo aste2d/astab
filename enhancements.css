@@ -1,0 +1,92 @@
+/* Additive controls only. The original dashboard styles and layout are unchanged. */
+[hidden] { display: none !important; }
+.minimal-footer { border: none; margin-top: 24px; padding-top: 0; }
+.minimal-footer:has(#wallpaperCredit:empty) { display: none; }
+.timer-trigger { position: relative; }
+.timer-trigger.is-running .deferred-trigger-icon { transform: translateY(-5px); width: 17px; height: 17px; }
+#timerMini { position: absolute; bottom: 5px; font: 8px/1 'Public Sans', sans-serif; font-variant-numeric: tabular-nums; }
+.timer-trigger.is-finished::after { content: ''; position: absolute; top: 8px; right: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent-sage); }
+.timer-popover { position: fixed; z-index: 110; width: min(270px, calc(100vw - 84px)); padding: 18px; background: var(--card-bg); color: var(--ink); border: 1px solid var(--warm-gray); border-radius: 16px; box-shadow: 0 14px 50px #0003; }
+.timer-heading { display: flex; align-items: center; justify-content: space-between; }
+.timer-heading h2 { font: 24px/1 'Libre Caslon Display', serif; font-weight: 400; }
+.timer-modes { display: flex; justify-content: center; gap: 8px; margin: 17px 0 12px; }
+.timer-modes button { border: none; border-radius: 6px; background: transparent; color: var(--muted); font: 11px/1 'Public Sans', sans-serif; padding: 7px 12px; cursor: pointer; }
+.timer-modes button[aria-pressed="true"] { background: color-mix(in srgb, var(--warm-gray) 50%, transparent); color: var(--ink); }
+#timerClock { text-align: center; font: 52px/1.2 'Libre Caslon Display', serif; font-variant-numeric: tabular-nums; letter-spacing: -.03em; }
+.timer-status { text-align: center; color: var(--muted); font-size: 10px; margin: 5px 0 17px; }
+.timer-actions { display: flex; justify-content: center; align-items: center; gap: 8px; }
+#timerToggle { min-width: 90px; color: var(--ink); background: color-mix(in srgb, var(--warm-gray) 60%, var(--card-bg)); border: 1px solid var(--warm-gray); }
+#timerReset { font-size: 19px; }
+.timer-popover button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.timer-popover button:disabled { opacity: .5; cursor: default; }
+.bookmark-folder-toolbar { margin-top: 14px; width: 100%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 7px; }
+#bookmarkBreadcrumbs, .bookmark-path { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; font-size: 10px; color: var(--muted); }
+#bookmarkBreadcrumbs button, .bookmark-path button { border: 0; background: none; color: var(--ink); cursor: pointer; font: inherit; padding: 3px 0; }
+#bookmarkBreadcrumbs button:hover, .bookmark-path button:hover { text-decoration: underline; }
+#bookmarkBreadcrumbs .bookmark-back, .bookmark-path .bookmark-back { font-size: 20px; line-height: 1; padding: 0 6px 2px 0; }
+.bookmark-path { margin-bottom: 12px; }
+.bookmark-path [aria-current] { color: var(--ink); }
+.bookmark-path button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; border-radius: 3px; }
+#bookmarkSearch { font: inherit; font-size: 10px; padding: 5px 8px; border-radius: 6px; border: 1px solid var(--warm-gray); color: var(--ink); background: color-mix(in srgb, var(--card-bg) 60%, transparent); width: 150px; }
+.bookmark-folder .quick-shortcut-icon-wrap svg { width: 24px; height: 24px; color: var(--ink); }
+.bookmark-bottom { position: relative; width: 100%; min-height: 32px; margin-top: 15px; color: var(--muted); font-size: 10px; }
+#bookmarkRoots { width: 100%; min-width: 0; }
+#bookmarkSearchToggle, #bookmarkRetry { position: absolute; top: 0; }
+#bookmarkSearchToggle { right: 36px; }
+#bookmarkRetry { right: 0; }
+.setting-toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; cursor: pointer; }
+.setting-toggle input { accent-color: var(--workspace-accent); }
+.setting-detail { display: block; margin-top: 6px; font-size: 10px; line-height: 1.5; color: var(--muted); }
+.wallpaper-settings select { width: 100%; padding: 7px; margin-bottom: 8px; border: 1px solid var(--warm-gray); border-radius: 6px; background: var(--card-bg); color: var(--ink); font: inherit; font-size: 11px; }
+.theme-menu { max-height: 75vh; overflow-y: auto; }
+.wallpaper-settings button:disabled { opacity: .4; cursor: default; }
+#wallpaperCredit { font-size: 10px; color: var(--muted); }
+#wallpaperCredit a { color: inherit; text-decoration: none; }
+#wallpaperCredit a:hover { text-decoration: underline; }
+
+/* The page is a launcher, with normal text editing only inside editable controls. */
+body { -webkit-user-select: none; user-select: none; }
+input, textarea, [contenteditable="true"], [contenteditable="plaintext-only"] { -webkit-user-select: text; user-select: text; }
+.desk-tools { position: relative; margin-left: auto; flex-shrink: 0; z-index: 120; }
+.mission-card .mission-heading { cursor: grab; touch-action: none; border-radius: 5px; }
+.mission-card .mission-heading:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+.mission-card.is-card-ghost { position: fixed; z-index: 200; margin: 0; pointer-events: none; transform: none; animation: none !important; opacity: .92; box-shadow: 0 20px 50px #0004; }
+.card-drop-placeholder { flex: 0 0 auto; border: 1px dashed var(--muted); border-radius: 16px; background: color-mix(in srgb, var(--warm-gray) 15%, transparent); }
+body.card-dragging, body.card-dragging * { cursor: grabbing !important; }
+.mission-card.is-keyboard-dragging { outline: 2px solid var(--focus-ring); }
+
+/* Keep secondary actions quiet until their surrounding area is in use. */
+#openTabsMissions .mission-card { cursor: grab; touch-action: pan-y; }
+#openTabsMissions .page-chip, #openTabsMissions .chip-text { cursor: grab; }
+#openTabsMissions .chip-favicon { cursor: pointer; -webkit-user-drag: none; }
+#openTabsMissions button, #openTabsMissions a { cursor: pointer; }
+[data-action="close-domain-tabs"], [data-action="close-all-open-tabs"] { opacity: 0; pointer-events: none; transition: opacity .15s ease; }
+.mission-card:hover [data-action="close-domain-tabs"],
+.mission-card:has(:focus-visible) [data-action="close-domain-tabs"],
+#openTabsSection:hover [data-action="close-all-open-tabs"],
+#openTabsSection:has(:focus-visible) [data-action="close-all-open-tabs"],
+[data-action="close-domain-tabs"]:focus-visible,
+[data-action="close-all-open-tabs"]:focus-visible { opacity: 1; pointer-events: auto; }
+.close-tabs.is-confirming { color: var(--status-abandoned); border-color: currentColor; }
+.all-bookmarks { width: 100%; min-width: 0; }
+.all-bookmarks > summary { opacity: 0; transition: opacity .15s ease; cursor: pointer; width: fit-content; max-width: calc(100% - 76px); padding: 4px 0; }
+#quickTabsSection:hover .all-bookmarks > summary,
+.all-bookmarks:focus-within > summary,
+.all-bookmarks[open] > summary { opacity: 1; }
+.minimal-footer { min-height: 25px; }
+#wallpaperCredit { opacity: 0; transition: opacity .15s ease; }
+.minimal-footer:hover #wallpaperCredit, .minimal-footer:focus-within #wallpaperCredit { opacity: 1; }
+#themeOptions { display: flex; flex-direction: column; gap: 10px; }
+.palette-colors { display: flex; overflow: hidden; border-radius: 9px; border: 1px solid var(--warm-gray); }
+.palette-color { flex: 1; min-width: 0; height: 45px; }
+.palette-color input { display: block; width: 100%; height: 100%; padding: 0; border: none; background: transparent; cursor: pointer; }
+.palette-color input::-webkit-color-swatch-wrapper { padding: 0; }
+.palette-color input::-webkit-color-swatch { border: none; }
+.palette-actions { display: flex; gap: 8px; }
+.palette-actions button { flex: 1; }
+#paletteDefault[aria-pressed="true"] { outline: 1px solid var(--warm-gray); }
+@media (hover: none) {
+  [data-action="close-domain-tabs"], [data-action="close-all-open-tabs"], .all-bookmarks > summary, #wallpaperCredit { opacity: 1; pointer-events: auto; }
+}
+
+.all-bookmarks-content { padding-top: 12px; }

@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+node_modules/
+release/
+.env
+.env.*
+*.pem
+*.key
+.codex/
+.sites-runtime/
