@@ -3152,8 +3152,8 @@ body.page-chip-list-dragging .chip-reorder-handle {
     transform: none !important;
   }
 }
-/* 1. 隐藏多余的小横条 */
-.mission-card.domain-card.has-neutral-bar::before {
+/* Hide the decorative top bar for every tab group, including duplicates. */
+.mission-card.domain-card::before {
     display: none !important;
 }
 
