@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.3 — 2026-11-07
+
+- Remove the unintended yellow line above tab groups containing duplicate tabs.
+- Keep duplicate counts and cleanup controls unchanged.
+- Animate every tab-group card on entry, including the fifth and later cards, with a bounded stagger.
+
 ## 2.1.2 — 2026-11-06
 
 First public astab release on GitHub.

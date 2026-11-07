@@ -699,7 +699,7 @@ function buildOverflowChips(hiddenTabs, urlCounts = {}) {
     </div>`;
 }
 
-function renderDomainCard(group) {
+function renderDomainCard(group, index = 0) {
   const tabs      = group.tabs || [];
   const tabCount  = tabs.length;
   const isLanding = group.domain === '__landing-pages__';
@@ -785,7 +785,7 @@ function renderDomainCard(group) {
   }
 
   return `
-    <div class="mission-card domain-card ${hasDupes ? 'has-amber-bar' : 'has-neutral-bar'}" data-domain-id="${stableId}" data-group-id="${group.domain}">
+    <div class="mission-card domain-card ${hasDupes ? 'has-amber-bar' : 'has-neutral-bar'}" data-domain-id="${stableId}" data-group-id="${group.domain}" style="--card-enter-index: ${index}">
       <div class="status-bar"></div>
       <div class="mission-content">
         <div class="mission-top">
@@ -1791,7 +1791,7 @@ async function initializeDashboardRuntime() {
 
   setTimeout(() => {
     document.body.classList.add('app-ready');
-  }, 800);
+  }, 1100);
 }
 
 // --- 新增：防抖定时器，防止瞬间多次重绘 ---
